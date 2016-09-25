@@ -38,6 +38,12 @@ nautilus
 
 git
 
+audacity
+
+tiled
+
+visual-studio-code
+
 # 3DS Homebrew
 
 devkitpro/arm
