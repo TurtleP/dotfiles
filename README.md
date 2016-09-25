@@ -44,6 +44,10 @@ tiled
 
 visual-studio-code
 
+love
+
+jdk7-open-infinality
+
 # 3DS Homebrew
 
 devkitpro/arm
