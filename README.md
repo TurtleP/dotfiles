@@ -14,39 +14,7 @@ ESP/EFI :: 100MiB
 LightDM
 
 # Programs
-i3
-
-i3-gaps
-
-android-studio
-
-obs-studio
-
-spotify
-
-discord-canary
-
-firefox
-
-dropbox
-
-wps-office
-
-lxappearance
-
-nautilus
-
-git
-
-audacity
-
-tiled
-
-visual-studio-code
-
-love
-
-jdk7-open-infinality
+Run install.sh
 
 # 3DS Homebrew
 
