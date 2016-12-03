@@ -28,3 +28,5 @@ pacman -S i3 i3-gaps i3lock-fancy-git rxvt-unicode luarocks5.1 obs-studio spotif
 # Install moontastic terminal theme
 # Thanks VideahGams, you're awesome, fam!
 sudo luarocks-5.1 install moontastic
+
+sudo chmod +x "/usr/share/lua/5.1/moontastic/init.lua"
