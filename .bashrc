@@ -29,15 +29,5 @@ export PORTLIBS=$DEVKITPRO/portlibs/armv6k
 #ANDROID
 export JAVA_HOME=/usr/lib/jvm/java-7-openjdk/
 
-export ANDROID_SDK=${HOME}/Android/Sdk
-export ANDROID_NDK=${HOME}/Android/Ndk
-
-export ANDROID_HOME=${ANDROID_SDK}
-export ANDROID_SWT=/usr/share/java
-export PATH=$PATH:${ANDROID_SDK}/tools:$ANDROID_NDK
-
-#RUBY
-export PATH=$PATH:$HOME/.gem/ruby/2.3.0/bin
-
 #PERL (because fuck you for not allowing i3 to build!)
 export PATH=$PATH:/usr/bin/core_perl
