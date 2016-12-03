@@ -2,22 +2,13 @@
 Because resizing Linux breaks things. Lesson learnt.
 
 # Dual-boot setup
-/ :: 4GiB
+/ :: 16GiB
 
-/home/ :: 64GiB
+/home/ :: 48GiB
 
 linux-swap :: 4GiB
 
 ESP/EFI :: 100MiB
 
-# Laptop Only
-LightDM
-
 # Programs
-Run install.sh
-
-# 3DS Homebrew
-
-devkitpro/arm
-
-xerpi's gpu libs/citro3d
+Run ```chmod +x ./setup.sh``` and run it through the terminal
