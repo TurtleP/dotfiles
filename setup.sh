@@ -16,6 +16,10 @@ mv .bashrc ~/
 #gtk-2.0 thing
 mv .gtkrc-2.0 ~/
 
+#terminal
+mv .Xresources ~/
+xrdb -merge ~/.Xresources
+
 pacman -S i3 i3-gaps i3lock-fancy-git rxvt-unicode luarocks5.1 obs-studio spotify \
   discord-canary firefox dropbox libreoffice-fresh lxappearance nautilus git \
   audacity tiled visual-studio-code love jdk7-open-infinality gtk-theme-arc-git \
