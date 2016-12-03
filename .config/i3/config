@@ -30,7 +30,7 @@ font pango:System San Francisco Display 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec rxvt-unicode
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -178,14 +178,12 @@ smart_gaps on # Disables gaps when only one window exists
 
 bindsym $mod+x exec gnome-screensaver-command -l
 
-for_window [class="^.*"] border pixel 6
+for_window [class="^.*"] border pixel 0
 
 # Background
 exec_always feh --bg-center /home/jpost/Pictures/background.png
-exec_always dropbox
 exec_always compton -CGb
-exec_always --no-startup-id ddunst
-exec_always gnome-screensaver
+exec_always --no-startup-id dunst
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
