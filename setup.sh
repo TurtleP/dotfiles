@@ -20,11 +20,13 @@ mv .gtkrc-2.0 ~/
 mv .Xresources ~/
 xrdb -merge ~/.Xresources
 
-pacman -S i3 i3-gaps i3lock-fancy-git feh rxvt-unicode luarocks5.1 obs-studio spotify \
-  discord-canary google-chrome-stable dropbox libreoffice-fresh lxappearance nautilus git \
-  audacity tiled visual-studio-code love jdk8-openjdk-infinality gtk-theme-arc-git \
-  paper-icon-theme-git dunst compton freetype2-infinality fontconfig-infinality \
-  
+pacman -S i3 i3status feh rxvt-unicode luarocks5.1 obs-studio spotify \
+  dropbox libreoffice-fresh lxappearance nautilus git \
+  audacity tiled love dunst compton
+
+yaourt -S i3-gaps i3lock-fancy-git discord-canary visual-studio-code google-chrome \
+  freetype2-infinality fontconfig-infinality jdk8-openjdk-infinality nautilus-dropbox \
+  gtk-theme-arc-git paper-icon-theme-git
 
 # Install moontastic terminal theme
 # Thanks VideahGams, you're awesome, fam!
