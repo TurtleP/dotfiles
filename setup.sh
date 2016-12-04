@@ -8,7 +8,7 @@ mv .config ~/
 mv .fonts ~/
 
 # backgrounds
-mv background ~/
+mv backgrounds ~/
 
 # .bashrc
 mv .bashrc ~/
@@ -20,10 +20,10 @@ mv .gtkrc-2.0 ~/
 mv .Xresources ~/
 xrdb -merge ~/.Xresources
 
-pacman -S i3 i3-gaps i3lock-fancy-git rxvt-unicode luarocks5.1 obs-studio spotify \
-  discord-canary firefox dropbox libreoffice-fresh lxappearance nautilus git \
+pacman -S i3 i3-gaps i3lock-fancy-git feh rxvt-unicode luarocks5.1 obs-studio spotify \
+  discord-canary google-chrome-stable dropbox libreoffice-fresh lxappearance nautilus git \
   audacity tiled visual-studio-code love jdk7-open-infinality gtk-theme-arc-git \
-  paper-icon-theme-git dunts compton
+  paper-icon-theme-git dunst compton
 
 # Install moontastic terminal theme
 # Thanks VideahGams, you're awesome, fam!
