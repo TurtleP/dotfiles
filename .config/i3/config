@@ -9,7 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -30,186 +30,83 @@ font pango:System San Francisco Display 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec rxvt-unicode
+bindsym $mod+Return exec hyper
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+Shift+d exec /home/jpost/.config/i3/fade.sh
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -dim 0.5
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus move
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
 
 # focused window right
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout split toggle
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
-
-# focus the parent container
-bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+space split toggle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-# Widow Colours
-set $base00 #101218
-set $base01 #1f222d
-set $base02 #252936
-set $base03 #7780a1
-set $base04 #C0C5CE
-set $base05 #d1d4e0
-set $base06 #C9CCDB
-set $base07 #ffffff
-set $base08 #ee829f
-set $base09 #f99170
-set $base0A #ffefcc
-set $base0B #a5ffe1
-set $base0C #97e0ff
-set $base0D #97bbf7
-set $base0E #c0b7f9
-set $base0F #fcc09e
-
-set $workspace1 "1:🌍 Firefox"
-set $workspace2 "2:⌨ Editor"
-set $workspace3 "3:💬 Discord"
-set $workspace4 "4:♫ Music"
-set $workspace5 "5:🍜  Other"
-
-# Bar
-bar {
-    font pango:System San Francisco Display 12
-    status_command i3status -c ~/.config/i3/i3status.conf
-    #height 18
-    position bottom
-    strip_workspace_numbers true
-    
-    bindsym button4 nop
-    bindsym button5 nop
-    
-    # Disable tray icons
-	# tray_output none
-    
-    colors {
-      separator $base03
-      background $base01
-      statusline $base05
-	  #border / background / text
-      focused_workspace  $base01 $base01    $base07
-      active_workspace   $base01 $base02    $base03
-      inactive_workspace $base01 $base01    $base03
-      urgent_workspace   $base01 $base01    $base08
-    }
-}
-
-#CUSTOM
-
-# border  background text    indicator
-  client.focused          $base01 $base01    $base07 $base0F
-  client.focused_inactive $base02 $base02    $base03 $base0F
-  client.unfocused        $base02 $base02    $base03 $base0F
-  client.urgent           $base02 $base08    $base00 $base0F
-
-gaps inner 16 # Enable gaps with pixel width
+gaps inner 10 # Enable gaps with pixel width
 
 smart_borders on # Disables borders when only one window exists
 smart_gaps on # Disables gaps when only one window exists
 
-bindsym $mod+x exec gnome-screensaver-command -l
-
 for_window [class="^.*"] border pixel 0
 
 # Background
-exec_always feh --bg-center /home/jpost/Pictures/background.png
+exec_always feh --bg-fill /home/jpost/Dropbox/Wallpapers/Minimal/2B.png
 exec_always compton -CGb
-exec_always --no-startup-id dunst
+exec --no-startup-id dunst
+exec --no-startup-id dropbox
+exec --no-startup-id conky
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
-
-# Move application to workspace
-bindsym $mod+shift+KP_1 move to workspace $workspace1
-bindsym $mod+shift+KP_2 move to workspace $workspace2
-bindsym $mod+shift+KP_3 move to workspace $workspace3
-bindsym $mod+shift+KP_4 move to workspace $workspace4
-bindsym $mod+shift+KP_5 move to workspace $workspace5
-
-# Switch workspaces
-bindsym $mod+KP_1 workspace $workspace1
-bindsym $mod+KP_2 workspace $workspace2
-bindsym $mod+KP_3 workspace $workspace3
-bindsym $mod+KP_4 workspace $workspace4
-bindsym $mod+KP_5 workspace $workspace5
-
-# Easy switch
-bindsym $mod+Right workspace next
-bindsym $mod+Left workspace prev
-
-# Toggle touchpad
-bindsym XF86TouchpadToggle exec touchpad-toggle.sh # toggle touchpad
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -220,4 +117,3 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
-

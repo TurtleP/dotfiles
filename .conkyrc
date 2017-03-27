@@ -1,0 +1,34 @@
+# Update interval (secs)
+update_interval 3.0
+
+background yes
+
+alignment tl
+gap_x 180
+gap_y 270
+
+# Max width
+maximum_width 600
+minimum_size 320 320
+
+# Text Info
+use_xft yes
+xftfont helvetica:size=32
+uppercase no
+
+border_width 0
+default_color gray
+
+own_window yes
+own_window_class Conky
+own_window_type override
+own_window_hints below
+own_window_transparent yes
+own_window_title conky
+
+double_buffer yes
+
+TEXT
+${alignc}${color white}${font hack:pixelsize=192}${time %H:%M},
+${alignc}${voffset -140}${color white}${font hack:pixelsize=64}${time %a, %d %B}
+${image /home/jpost/conky/memory.png -p 68,300}${voffset 18}${offset 132}${color white}${cpubar 8,64}${image /home/jpost/conky/cpu.png -p 228,300}${offset 100}${color white}${membar 8,64}${image /home/jpost/conky/home.png -p 388, 300}${offset 100}${color white}${fs_bar 8,64 /home}
