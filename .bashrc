@@ -106,8 +106,3 @@ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk/
 
 #PERL (because fuck you for not allowing i3 to build!)
 export PATH=$PATH:/usr/bin/core_perl
-
-#BOT
-export prefix='$'
-export token='MjE1NTkwMzgzNTk2MzM5MjEx.CpZwXw.2EBTtvtKDkZH4Cc89wqtUGyNEG8'
-export username='Hifume'
