@@ -1,14 +1,26 @@
-# Yeah so this is a bash script and it'll set up a lot of the stuff I need.
-# All you'll need to do is do chmod +x ./setup.sh and run it from terminal
+#!/bin/bash
 
-# i3 config
-mv .config ~/
+## install zsh
+echo -n "Installing zsh.. "
+apt install zsh
+echo "done!"
 
-# .bashrc
-mv .bashrc ~/
+## set as default shell
+echo -n "Setting zsh as default shell.. "
+chsh -s $(which zsh)
+echo "done!"
 
-sudo pacman -S feh obs-studio ncmpcpp \
-  dropbox libreoffice-fresh lxappearance nautilus git \
-  audacity tiled love dunst compton transset-df mpd mpv youtube-dl
+## install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-yaourt -S pacaur hyper ttf-hack-powerline-git discord-canary visual-studio-code firefox
+## Copy .zshrc
+echo -n "Copying zsh config.. "
+cp ./.zshrc ~/
+echo "done!"
+
+## Copy theme
+echo -n "Copying theme file.. "
+cp ./.oh-my-zsh ~/
+echo "done!"
+
+
